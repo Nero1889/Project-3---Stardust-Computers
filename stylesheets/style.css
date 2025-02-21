@@ -89,6 +89,8 @@ img, picture, video, canvas, svg {
     background-color: #0a0a0a;
     padding: 20px;
     border-radius: 7px;
+    display: flex;
+    flex-direction: column;
 }
 .item-img {
     width: 250px;
@@ -98,18 +100,20 @@ img, picture, video, canvas, svg {
     color: white;
     font-size: var(--size-xl);
     margin-top: 1rem;
+    width: 23ch;
 }
 .item-desc {
     margin-top: .5rem;
     color: grey;
     width: 32ch;
     font-size: var(--size-sm);
+    margin-bottom: 1rem;
 }
 .purchase-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 1.5rem;
+    margin-top: auto;
 }
 .item-price {
     color: white;
@@ -122,9 +126,6 @@ img, picture, video, canvas, svg {
     padding: 7px 20px;
     border-radius: 7px;
 }
-
-
-
 @keyframes txt-rgb {
     to {
         background-position: 200%;
