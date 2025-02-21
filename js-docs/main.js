@@ -27,22 +27,20 @@ MOBILE_LINKS.forEach(link => {
 
 /* Change Theme */
 const THEME_TOGGLE_BTNS = document.querySelectorAll(".theme-toggle");
-
 const CURRENT_THEME = localStorage.getItem("theme");
-if (CURRENT_THEME === "dark") {
-    document.body.classList.add("dark-mode");
+
+if (CURRENT_THEME === "light") {
+    document.body.classList.add("light-mode");
 }
 
 THEME_TOGGLE_BTNS.forEach(btn => {
     btn.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
+        document.body.classList.toggle("light-mode");
 
-        if (document.body.classList.contains("dark-mode")) {
-            localStorage.setItem("theme", "dark");
-        } else {
-            localStorage.removeItem("theme", "dark");
-        }
-
+        document.body.classList.contains("light-mode")
+        ? localStorage.setItem("theme", "light")
+        : localStorage.removeItem("theme", "light");
+        
         document.body.style.transition = "background-color .2s ease-in-out";
     });
 }); 
