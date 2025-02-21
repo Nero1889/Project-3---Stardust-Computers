@@ -1,8 +1,6 @@
 #header-title {
     position: absolute;
     color: white;
-    left: 0;
-    margin-left: 120px;
     font-size: var(--size-xl);
 }
 .header {
@@ -46,6 +44,14 @@
     color: white;
     transition: color .2s;
     margin-right: 30px;
+}
+
+/* xxs = (extra extra small) */
+@media (min-width: 320px) {
+    #header-title {
+        left: 0;
+        margin-left: 20px;
+    }
 }
 
 /* md = (medium) */
