@@ -41,7 +41,6 @@ body {
     padding: 7px;
     border-radius: 25px;
     border: none;
-    width: 20rem;
     margin-top: 2rem;
 }
 img, picture, video, canvas, svg {
@@ -83,7 +82,6 @@ img, picture, video, canvas, svg {
 }
 hr {
     border-color: grey;
-    width: 500px;
     margin: 0 auto;
     margin-top: 2rem;
 }
@@ -109,6 +107,7 @@ hr {
     border-radius: 7px;
     display: flex;
     flex-direction: column;
+    animation: rbg-border 3.5s linear infinite;
 }
 .item.hidden {
     display: none;
@@ -148,6 +147,10 @@ hr {
     padding: 7px 20px;
     border-radius: 7px;
     cursor: pointer;
+    transition: .2s box-shadow;
+}
+.buy:hover {
+    box-shadow: 0 0 12px #b41e82;
 }
 #no-results {
     display: none;
@@ -185,6 +188,18 @@ hr {
         background-position: 200%;
     }
 }
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@keyframes rgb-border {
+    from {
+        --angle: 0deg
+    } to {
+        --angle: 360deg;
+    }
+}
 
 /* xxs = (extra extra small) */
 @media (min-width: 320px) {
@@ -193,6 +208,12 @@ hr {
     }
     .section {
         margin-top: 5rem;
+    }
+    .search-engine {
+        width: 15rem;
+    }
+    hr {
+        width: 250px;
     }
 }
 
@@ -223,6 +244,12 @@ hr {
     }
     .section {
         margin-top: 5rem;
+    }
+    .search-engine {
+        width: 20rem;
+    }
+    hr {
+        width: 500px;
     }
 }
 
