@@ -81,6 +81,21 @@ img, picture, video, canvas, svg {
     align-items: center;
     justify-content: center;
 }
+hr {
+    border-color: grey;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+.sub-items-title {
+    color: var(--txt);
+    text-align: center;
+    font-weight: normal;
+    margin-top: 1rem;
+    font-family: Atkinson Hyperlegible Mono, Arial;
+    font-size: var(--size-3xl);
+    margin-top: 5rem;
+}
 .store-container {
     margin-top: 5rem;
     display: flex;
@@ -130,6 +145,27 @@ img, picture, video, canvas, svg {
     padding: 7px 20px;
     border-radius: 7px;
     cursor: pointer;
+}
+.parts {
+    background-color: #0a0a0a;
+    padding: 20px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    width: 200px; 
+}
+.parts-img {
+    height: 150px;
+    width: 150px;
+    margin-left: 25px;
+    margin-top: 1rem;
+}
+.parts-desc {
+    margin-top: .5rem;
+    color: grey;
+    width: 25ch;
+    font-size: var(--size-sm);
+    margin-bottom: 1rem;
 }
 @keyframes txt-rgb {
     to {
