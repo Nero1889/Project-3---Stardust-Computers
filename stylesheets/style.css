@@ -8,7 +8,6 @@
     --txt: white;
     --drk-bg-color: #0f0f0f;
     
-
     /* Sizes */
     --size-xss: 0.5rem;
     --size-xs: 0.75rem;
@@ -42,8 +41,8 @@ body {
     padding: 7px;
     border-radius: 25px;
     border: none;
-    position: absolute;
-    left: 17rem;
+    width: 20rem;
+    margin-top: 2rem;
 }
 img, picture, video, canvas, svg {
     max-width: 100%;
@@ -77,9 +76,13 @@ img, picture, video, canvas, svg {
     background-color: transparent;
     border: none;
 }
+.search-engine-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .store-container {
-    margin-top: 2rem;
-    border: 1px solid purple;
+    margin-top: 5rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -141,10 +144,6 @@ img, picture, video, canvas, svg {
     .section {
         margin-top: 5rem;
     }
-    .search-engine {
-        left: 10rem;
-        width: 120px;
-    }
 }
 
 /* xs = (extra small) */
@@ -154,9 +153,6 @@ img, picture, video, canvas, svg {
     }
     .section {
         margin-top: 5rem;
-    }
-    .search-engine {
-        width: 150px;
     }
 }
 
@@ -184,9 +180,6 @@ img, picture, video, canvas, svg {
 @media (min-width: 1024px) {
     .container {
         max-width: 1024px;
-    }
-    .search-engine {
-        width: 200px;
     }
 }
 
