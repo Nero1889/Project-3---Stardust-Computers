@@ -13,5 +13,39 @@
     -webkit-text-fill-color: transparent;
     text-align: center;
     font-family: Atkinson Hyperlegible Mono, Arial;
-    font-size: var(--size-7xl);
+}
+
+/* xxs = (extra extra small) */
+@media (min-width: 320px) {
+    #items-title {
+        font-size: var(--size-3xl);
+    }
+}
+
+/* xs = (extra small) */
+@media (min-width: 475px) {
+    #items-title {
+        font-size: var(--size-4xl);
+    }
+}
+
+/* sm = (small) */
+@media (min-width: 640px) {
+    #items-title {
+        font-size: var(--size-5xl);
+    }
+}
+
+/* md = (medium) */
+@media (min-width: 768px) {
+    #items-title {
+        font-size: var(--size-6xl);
+    }
+}
+
+/* xl = (extra large) */
+@media (min-width: 1280px) {
+    #items-title {
+        font-size: var(--size-7xl);
+    }
 }
