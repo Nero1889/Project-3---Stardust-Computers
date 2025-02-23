@@ -27,9 +27,6 @@
    color: var(--txt);
    font-weight: 700;
 }
-.mobile-link:hover {
-    color: #aa6f00;
-}
 #mobile-nav #sun {
     color: var(--txt);
     font-size: var(--size-3xl);
