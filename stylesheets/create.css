@@ -1,9 +1,8 @@
 .create {
-    /* border: 1px solid red; */
     margin-top: 25rem;
 }
-#build-title {
-    color: white;
+#create-title {
+    color: var(--txt);
     text-align: center;
     font-size: 2.5rem;
     font-family: Atkinson Hyperlegible Mono, Arial;
@@ -25,6 +24,11 @@
     align-items: center;
     border: 1px solid #530053;
     border-radius: 7px;
+    transition: transform .3s;
+}
+.create-cards:hover {
+    border: 1px solid #770053;
+    transform: translateY(-6px);
 }
 .create-img {
     width: 12rem;
