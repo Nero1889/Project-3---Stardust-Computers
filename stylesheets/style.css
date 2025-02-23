@@ -110,6 +110,9 @@ hr {
     display: flex;
     flex-direction: column;
 }
+.item.hidden {
+    display: none;
+}
 .item-img {
     width: 200px;
     height: 150px;
@@ -145,6 +148,16 @@ hr {
     padding: 7px 20px;
     border-radius: 7px;
     cursor: pointer;
+}
+#no-results {
+    display: none;
+    text-align: center;
+    margin-top: 25px;
+    color: white;
+    font-size: var(--size-10xl);
+}
+#no-results .visible {
+    display: block;
 }
 .parts {
     background-color: #0a0a0a;
