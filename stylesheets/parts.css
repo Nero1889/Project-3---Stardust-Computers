@@ -1,0 +1,18 @@
+.parts {
+    margin-top: 15rem;
+}
+#parts-title {
+    color: var(--txt);
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: Atkinson Hyperlegible Mono, Arial;
+    font-weight: 100;
+}
+#parts-container {
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: 100px 100px;
+}
+.parts-cards {
+    background-color: #b71234;
+}
