@@ -44,3 +44,21 @@ THEME_TOGGLE_BTNS.forEach(btn => {
         document.body.style.transition = "background-color .2s ease-in-out";
     });
 }); 
+
+/* Search Engine (Prototype) */
+const SEARCH_INPUT = document.querySelector(".search-engine");
+const ITEMS = document.querySelectorAll(".item");
+const NO_RESULTS = document.getElementById('no-results');
+
+SEARCH_INPUT.addEventListener("input", () => {
+    const SEARCH_TERM = SEARCH_INPUT.value.toLowerCase();
+    let foundResults = false;
+
+    ITEMS.forEach(item => {
+        const KEYWORDS = item.dataset.keywords.toLowerCase();
+
+        KEYWORDS.includes(SEARCH_TERM)
+        ? item.classList.remove("hidden")
+        : item.classList.add("hidden")
+    });
+});
