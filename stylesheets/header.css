@@ -25,6 +25,7 @@
     font-size: var(--size-3xl);
     margin-right: 20px;
 }
+
 .header-link:hover, #sun:hover {
     background: linear-gradient(to right, #b71234,
     #b41e82, #9134bd, #1c47b6);
