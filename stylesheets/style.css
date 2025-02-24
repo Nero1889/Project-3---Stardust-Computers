@@ -109,7 +109,10 @@ hr {
     flex-direction: column;
     animation: rbg-border 3.5s linear infinite;
 }
-.item.hidden {
+.item.hidden /* .parts.hidden  */{
+    display: none;
+}
+.parts.hidden {
     display: none;
 }
 .item-img {
@@ -123,7 +126,7 @@ hr {
     color: white;
     font-size: var(--size-xl);
     margin-top: 1rem;
-    width: 23ch;
+    width: 17ch;
 }
 .item-desc {
     margin-top: .5rem;
