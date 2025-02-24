@@ -39,7 +39,7 @@ THEME_TOGGLE_BTNS.forEach(btn => {
 
         document.body.classList.contains("light-mode")
         ? localStorage.setItem("theme", "light")
-        : localStorage.removeItem("theme", "light");
+        : localStorage.removeItem("theme");
         
         document.body.style.transition = "background-color .2s ease-in-out";
     });
@@ -47,18 +47,27 @@ THEME_TOGGLE_BTNS.forEach(btn => {
 
 /* Search Engine (Prototype) */
 const SEARCH_INPUT = document.querySelector(".search-engine");
-const ITEMS = document.querySelectorAll(".item");
-const NO_RESULTS = document.getElementById('no-results');
+const STORE_CONTAINERS = document.querySelectorAll(".store-container");
 
 SEARCH_INPUT.addEventListener("input", () => {
     const SEARCH_TERM = SEARCH_INPUT.value.toLowerCase();
-    let foundResults = false;
 
-    ITEMS.forEach(item => {
-        const KEYWORDS = item.dataset.keywords.toLowerCase();
+    STORE_CONTAINERS.forEach(container => {
+        const ITEMS = container.querySelectorAll(".item");
+        const PARTS = container.querySelectorAll(".parts");
 
-        KEYWORDS.includes(SEARCH_TERM)
-        ? item.classList.remove("hidden")
-        : item.classList.add("hidden")
+        ITEMS.forEach(item => {
+            const KEYWORDS = item.dataset.keywords.toLowerCase();
+            KEYWORDS.includes(SEARCH_TERM)
+            ? item.classList.remove("hidden")
+            : item.classList.add("hidden");
+        });
+
+        PARTS.forEach(part => {
+            const KEYWORDS = part.dataset.keywords.toLowerCase();
+            KEYWORDS.includes(SEARCH_TERM)
+            ? part.classList.remove("hidden")
+            : part.classList.add("hidden");
+        });
     });
 });
