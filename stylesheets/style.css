@@ -80,6 +80,13 @@ img, picture, video, canvas, svg {
     align-items: center;
     justify-content: center;
 }
+#keywords {
+    text-align: center;
+    color: var(--txt);
+    font-family: Atkinson Hyperlegible Mono, Arial;
+    margin-top: 1rem;
+    font-size: var(--size-xs);
+}
 hr {
     border-color: grey;
     margin: 0 auto;
@@ -109,7 +116,7 @@ hr {
     flex-direction: column;
     animation: rbg-border 3.5s linear infinite;
 }
-.item.hidden /* .parts.hidden  */{
+.item.hidden {
     display: none;
 }
 .parts.hidden {
