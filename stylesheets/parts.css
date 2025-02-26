@@ -16,3 +16,22 @@
 .parts-cards {
     background-color: #b71234;
 }
+.rbg-bar {
+    position: relative;
+    width: 100%;
+    background-color: white;
+    -webkit-box-reflect: below 1px
+    linear-gradient(transparent, #0005);
+    height: 125px;
+    margin-top: 5rem;
+}
+.rbg-bar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #b71234,
+    #b41e82, #9134bd, #1c47b6, #9134bd,
+    #b41e82, #b71234);
+    animation: txt-rgb 2s linear infinite;
+    background-size: 200%;
+}
