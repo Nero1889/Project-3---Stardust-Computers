@@ -20,12 +20,12 @@
     position: relative;
     width: 100%;
     background-color: white;
-    height: 225px;
+    height: auto;
     margin-top: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10rem;
+    flex-wrap: wrap;
 }
 .rbg-bar::before {
     content: "";
@@ -54,4 +54,29 @@
     font-weight: 300;
     width: 19ch;
     margin-top: 1rem;
+}
+
+/* xxs = (extra extra small) */
+@media (min-width: 320px) {
+    .rbg-bar {
+        gap: 1rem;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+/* md = (medium) */
+@media (min-width: 768px) {
+    .rbg-bar {
+        gap: 5rem;
+    }
+}
+
+/* 2xl = (two extra large) */
+@media (min-width: 1536px) {
+    .rbg-bar {
+        gap: 10rem;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 }
