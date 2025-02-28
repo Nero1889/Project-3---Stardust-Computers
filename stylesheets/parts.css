@@ -20,10 +20,12 @@
     position: relative;
     width: 100%;
     background-color: white;
-    -webkit-box-reflect: below 1px
-    linear-gradient(transparent, #0005);
-    height: 125px;
+    height: 225px;
     margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
 }
 .rbg-bar::before {
     content: "";
@@ -34,4 +36,22 @@
     #b41e82, #b71234);
     animation: txt-rgb 2s linear infinite;
     background-size: 200%;
+}
+.rgb-container {
+    position: relative;
+    color: white;
+    text-align: center;
+}
+.rgb-container img {
+    width: 50px;
+}
+.rgb-bar-title {
+    font-size: var(--size-xl);
+    font-family: Atkinson Hyperlegible Mono, Arial;
+}
+.rgb-bar-desc {
+    font-size: var(--size-base);
+    font-weight: 300;
+    width: 19ch;
+    margin-top: 1rem;
 }
