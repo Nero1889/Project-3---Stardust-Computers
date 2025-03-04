@@ -8,8 +8,11 @@
     font-family: Atkinson Hyperlegible Mono, Arial;
     font-weight: 100;
 }
+.links {
+    cursor: pointer;
+    text-decoration: none;
+}
 .create-container {
-    font-family: Atkinson Hyperlegible Mono, Arial;
     margin-top: 2.5rem;
     display: flex;
     flex-wrap: wrap;
@@ -35,14 +38,17 @@
     border-radius: 7px;
 }
 .create-title {
+    font-family: Atkinson Hyperlegible Mono, Arial;
     color: white;
     text-align: center;
     font-weight: normal;
     margin-top: 1rem;
+    font-size: var(--size-2xl);
 }
 .create-desc {
     color: grey;
     width: 25ch;
     margin-top: .5rem;
-    font-size: var(--size-sm);
+    font-size: var(--size-xm);
+    line-height: 1.2rem;
 }
