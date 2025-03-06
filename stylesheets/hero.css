@@ -11,7 +11,7 @@
     display: block;
     width: 100%; 
     margin-top: 114px;
-    opacity: 50%;
+    opacity: 80%;
     z-index: -1;
 }
 .image-container, #hero-title {
@@ -40,12 +40,13 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
-    font-family: Atkinson Hyperlegible Mono;
+    font-family: Atkinson Hyperlegible Mono, Arial;
 }
 #hero-desc {
-    color: var(--txt);
-    font-family: Atkinson Hyperlegible Mono;
+    color: white;
+    font-family: Atkinson Hyperlegible Mono, Arial;
     font-weight: 100;
+    text-shadow: 0 0 5px black;
 }
 
 /* xxs = (extra extra small)  */
