@@ -201,9 +201,8 @@ hr {
     align-items: center;
     justify-content: center;
 }
-.home-img {
-    border: 1px solid red;
-    width: 20rem;
+.home {
+    border: 1px solid #b71234;
 }
 @keyframes txt-rgb {
     to {
