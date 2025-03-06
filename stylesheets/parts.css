@@ -64,8 +64,10 @@
 }
 .parts-cards {
     background-color: var(--card);
-    width: 50rem;
-    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: -1;
 }
 .parts-titles {
     color: var(--txt);
@@ -82,6 +84,15 @@
     font-weight: normal;
     font-family: "Roboto";
 }
+.home-img {
+    width: 20rem;
+    z-index: 10;
+}
+.shade {
+    position: absolute;
+    z-index: 0;
+    opacity: 50%;
+}
 
 
 /* xxs = (extra extra small) */
@@ -91,6 +102,18 @@
         padding-top: 50px;
         padding-bottom: 50px;
     }
+    .parts-descr {
+        width: 32ch;
+        text-align: left;
+    }
+    .parts-cards {
+        width: 20rem;
+        height: 30rem;
+    }
+    .shade {
+        width: 20rem;
+        height: 30rem;
+    }
 }
 
 /* md = (medium) */
@@ -98,13 +121,38 @@
     .rbg-bar {
         gap: 5rem;
     }
+    .parts-cards {
+        width: 25rem;
+    }
+    .shade {
+        width: 25rem;
+    }
 }
 
+/* xl = (extra large) */
+@media (min-width: 1280px) {
+    .parts-cards {
+        width: 40rem;
+    }
+    .shade {
+        width: 40rem;
+    }
+}
 /* 2xl = (two extra large) */
 @media (min-width: 1536px) {
     .rbg-bar {
         gap: 10rem;
         padding-top: 50px;
         padding-bottom: 50px;
+    }
+    .parts-descr {
+        width: 40ch;
+        text-align: center;
+    }
+    .parts-cards {
+        width: 50rem;
+    }
+    .shade {
+        width: 50rem;
     }
 }
