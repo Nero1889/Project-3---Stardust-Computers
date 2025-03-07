@@ -120,7 +120,6 @@
     font-family: "Roboto";
 }
 .home-img {
-    width: 20rem;
     z-index: 10;
     margin-top: 1rem;
 }
@@ -142,6 +141,9 @@
     .parts-cards {
         width: 20rem;
         height: 30rem;
+    }
+    .home-img {
+        width: 15rem;
     }
 }
 
@@ -181,5 +183,8 @@
     }
     .parts-cards {
         width: 50rem;
+    }
+    .home-img {
+        width: 20rem;
     }
 }
