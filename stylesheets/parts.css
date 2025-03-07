@@ -132,18 +132,22 @@
         padding-bottom: 50px;
     }
     #parts-title {
-        font-size: var(--size-2xl);
+        font-size: var(--size-3xl);
     }
     #parts-container {
-        gap: 1rem;
-    }
-    .parts-descr {
-        width: 30ch;
-        text-align: left;
+        gap: 3.4rem;
     }
     .parts-cards {
         width: 20rem;
         height: 30rem;
+    }
+    .parts-titles {
+        font-size: var(--size-xl);
+    }
+    .parts-descr {
+        font-size: var(--size-sm);
+        width: 35ch;
+        text-align: left;
     }
     .home-img {
         width: 15rem;
@@ -162,8 +166,13 @@
     .rbg-bar {
         gap: 5rem;
     }
+    .parts-titles {
+        font-size: var(--size-2xl);
+    }
     .parts-descr {
-        width: 32ch;
+        font-size: var(--size-base);
+        width: 35ch;
+        text-align: left;
     }
     .parts-cards {
         width: 25rem;
@@ -189,6 +198,9 @@
     }
     #parts-container {
         gap: 2.5rem;
+    }
+    .parts-titles {
+        font-size: var(--size-3xl);
     }
     .parts-descr {
         width: 40ch;
