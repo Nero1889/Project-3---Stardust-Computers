@@ -45,7 +45,6 @@
     text-align: center;
     font-weight: normal;
     margin-top: 1rem;
-    font-size: var(--size-2xl);
 }
 .create-desc {
     color: grey;
@@ -53,4 +52,25 @@
     margin-top: .5rem;
     font-size: var(--size-xm);
     line-height: 1.2rem;
+}
+
+/* xxs = (extra extra small) */
+@media (min-width: 320px) {
+    #create-title {
+        font-size: var(--size-2xl);
+    }
+}
+
+/* sm = (small) */
+@media (min-width: 640px) {
+    #create-title {
+        font-size: var(--size-3xl);
+    }
+}
+
+/* xl = (extra large) */
+@media (min-width: 1280px) {
+    #create-title {
+        font-size: var(--size-4xl);
+    }
 }
