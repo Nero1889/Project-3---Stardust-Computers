@@ -1,0 +1,7 @@
+.footer {
+    background-color: var(--card);
+    height: 10rem;
+}
+#one {
+    border: 5px solid #b71234;
+}
