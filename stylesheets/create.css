@@ -58,6 +58,7 @@
 @media (min-width: 320px) {
     #create-title {
         font-size: var(--size-2xl);
+        margin-top: -17rem;
     }
 }
 
@@ -65,12 +66,21 @@
 @media (min-width: 640px) {
     #create-title {
         font-size: var(--size-3xl);
+        margin-top: -15rem;
     }
 }
 
+/* md = (medium) */
+@media (min-width: 768px) {
+    #create-title {
+        margin-top: -12rem;
+    }
+}
 /* xl = (extra large) */
 @media (min-width: 1280px) {
     #create-title {
         font-size: var(--size-4xl);
+        margin-top: -2.5rem;
+        margin-bottom: 5rem;
     }
 }
