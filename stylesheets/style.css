@@ -116,7 +116,6 @@ hr {
     border-radius: 7px;
     display: flex;
     flex-direction: column;
-    animation: rbg-border 3.5s linear infinite;
 }
 .item.hidden {
     display: none;
