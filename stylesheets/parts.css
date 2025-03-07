@@ -13,17 +13,17 @@
     font-weight: 100;
     margin-top: 5rem;
 }
-.rbg-bar {
-    position: relative;
-    width: 100%;
-    background-color: white;
-    height: auto;
-    margin-top: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+.rbg-bar, .rgb-bar2 { /* ===================================================== */
+    position: relative;                                                   /**/
+    width: 100%;                                                         /**/
+    background-color: white;                                         /**/
+    height: auto;                                                    /**/
+    margin-top: 5rem;                                              /**/
+    display: flex;                                               /**/
+    align-items: center;                                       /**/
+    justify-content: center;                                 /**/
+    flex-wrap: wrap;                                       /**/
+} /* ===================================================== */
 .rbg-bar::before {
     content: "";
     position: absolute;
@@ -33,7 +33,21 @@
     #b41e82, #b71234);
     animation: txt-rgb 2s linear infinite;
     background-size: 200%;
-}
+} /* ===================================================== */
+.rbg-bar2::before {                                      /**/
+    content: "";                                         /**/
+    position: absolute;                                  /**/
+    inset: 0;                                            /**/
+    background: linear-gradient(to right, #a50d0d,     /**/
+    #a5300d, #a5630d, #a5890d, #7ca50d,         /**/
+    #3da50d, #0da52e, #0da57f, #0d87a5,         /**/
+    #0d42a5, #290da5, #5c0da5, #a00da5,         /**/
+    #a50d0d);                                         /**/
+    animation: txt-rgb 2s linear infinite;              /**/
+    background-size: 200%;                              /**/
+    height: 1rem;    
+    margin-top: 230rem;                                   /**/                               /**/
+} /* ===================================================== */
 .rgb-container {
     position: relative;
     color: white;
