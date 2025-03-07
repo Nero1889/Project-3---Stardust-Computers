@@ -1,0 +1,24 @@
+#one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: baseline;
+    gap: 5rem;
+}
+#preview-title, #preview-desc {
+    color: white;
+}
+#pc-preview {
+    width: 25rem;
+}
+#preview-title {
+    font-size: var(--size-5xl);
+    font-family: Atkinson Hyperlegible Mono, Arial;
+}
+#preview-desc {
+    font-size: var(--size-base);
+    margin-top: 1rem;
+    width: 60ch;
+    color: grey;
+    line-height: 1.5rem;
+}
