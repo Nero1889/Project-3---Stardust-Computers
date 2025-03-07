@@ -131,6 +131,9 @@
         padding-top: 50px;
         padding-bottom: 50px;
     }
+    #parts-title {
+        font-size: var(--size-2xl);
+    }
     #parts-container {
         gap: 1rem;
     }
@@ -144,6 +147,13 @@
     }
     .home-img {
         width: 15rem;
+    }
+}
+
+/* sm = (small) */
+@media (min-width: 640px) {
+    #parts-title {
+        font-size: var(--size-3xl);
     }
 }
 
@@ -162,6 +172,9 @@
 
 /* xl = (extra large) */
 @media (min-width: 1280px) {
+    #parts-title {
+        font-size: var(--size-4xl);
+    }
     .parts-cards {
         width: 40rem;
     }
