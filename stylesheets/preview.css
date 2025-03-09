@@ -1,24 +1,77 @@
-#one {
+#preview-center {
     display: flex;
-    justify-content: center;
     align-items: center;
-    justify-content: baseline;
+    justify-content: center;
     gap: 5rem;
+    flex-wrap: wrap;
+    margin-top: 5rem;
 }
 #preview-title, #preview-desc {
     color: white;
 }
-#pc-preview {
-    width: 25rem;
-}
 #preview-title {
-    font-size: var(--size-5xl);
     font-family: Atkinson Hyperlegible Mono, Arial;
 }
 #preview-desc {
-    font-size: var(--size-base);
     margin-top: 1rem;
-    width: 60ch;
     color: grey;
-    line-height: 1.5rem;
+}
+
+/* xxs = (extra extra small) */
+@media (min-width: 320px) {
+    #preview-title {
+        font-size: var(--size-2xl);
+        text-align: center;
+    }
+    #preview-desc {
+        font-size: var(--size-xs);
+        line-height: 1.2rem;
+        width: 40ch;
+    }
+    #pc-preview {
+        width: 10rem;
+        margin-top: -3rem;
+    }
+}
+
+/* sm = (small) */
+@media (min-width: 640px) {
+    #preview-title {
+        font-size: var(--size-3xl);
+    }
+    #preview-desc {
+        font-size: var(--size-sm);
+        width: 60ch;
+        line-height: 1.3rem;
+    }
+    #pc-preview {
+        width: 15rem;
+    }
+}
+
+/* md = (medium) */
+@media (min-width: 768px) {
+    #preview-title {
+        font-size: var(--size-4xl);
+        text-align: left;
+    }
+    #preview-desc {
+        width: 40ch;
+    }
+}
+
+/* 2xl = (two extra large) */
+@media (min-width: 1536px) {
+    #preview-title {
+        font-size: var(--size-5xl);
+    }
+    #preview-desc {
+        font-size: var(--size-base);
+        line-height: 1.5rem;
+        width: 60ch;
+    }
+    #pc-preview {
+        margin-top: 0rem;
+        width: 22rem;
+    }
 }
