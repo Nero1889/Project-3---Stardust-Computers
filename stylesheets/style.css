@@ -89,6 +89,25 @@ img, picture, video, canvas, svg {
     margin-top: 1rem;
     font-size: var(--size-xs);
 }
+.shopping-cart {
+    width: 2rem;
+}
+.cart {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.total {
+    position: absolute;
+    background-color: #b71234;
+    text-align: center;
+    border-radius: 25px;
+    padding: 1px;
+    width: 2rem;
+    margin-top: -3rem;
+    margin-left: 1rem;
+}
 hr {
     border-color: grey;
     margin: 0 auto;
