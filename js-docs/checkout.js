@@ -7,12 +7,31 @@ function addToCart(itemId, price) {
     updateCartDisplay();
     updateCartCount();
 }
+const CART_MODAL = document.querySelector("#cart-modal");
+const SHOPPING_CART_ICON = document.querySelector(".shopping-cart");
+const CLOSE_BTN = document.querySelector(".close-btn");
+
+SHOPPING_CART_ICON.addEventListener("click", () => {
+    CART_MODAL.style.display = "block";
+    updateCartDisplay();
+});
+
+CLOSE_BTN.addEventListener("click", () => {
+    CART_MODAL.style.display = "none";
+});
+
+window.addEventListener("click", (event) => {
+    if (event.target === CART_MODAL) {
+        CART_MODAL.style.display = "none";
+    }
+});
+
 function updateCartDisplay() {
     localStorage.setItem("cart", JSON.stringify(cart));
     const CART_ITEMS = document.querySelector("#cart-items");
     const CART_TOTAL = document.querySelector("#cart-total");
 
-    if (CART_ITEMS && CART_TOTAL) {
+    if (CART_ITEMS && CART_TOTAL && CART_MODAL.style.display === "block") {
         CART_ITEMS.innerHTML = "";
         total = 0;
 
