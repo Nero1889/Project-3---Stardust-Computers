@@ -74,13 +74,15 @@
     <main>
         <div id="cart-modal" class="modal hidden">
             <div class="modal-content">
-                <span class="close-btn">x</span>
-                <h2>Shopping Cart</h2>
+                <span class="close-btn">
+                    <img class="close" src="images/close.png" alt="Close Button">
+                </span>
+                <h2 class="cart-title">Shopping Cart</h2>
                 <ul id="cart-items">
                 </ul>
                 <p>Total: $<span id="cart-total">0.00</span></p>
-                <button id="checkout">Proceed to Checkout</button>
-                <button id="clear-cart">Clear Cart</button>
+                <button id="checkout" class="buy">Proceed to Checkout</button>
+                <button id="clear-cart" class="buy">Clear Cart</button>
             </div>
         </div>
         <section class="items container section">        
