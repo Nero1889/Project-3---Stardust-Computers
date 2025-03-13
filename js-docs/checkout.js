@@ -1,9 +1,9 @@
-/* Cart Item and Total Count */
+/* Cart Items and Total Count */
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let total = 0;
 
 function addToCart(itemId, price) {
-    cart.push({itemId, price});
+    cart.push({ itemId, price });
     updateCartDisplay();
     updateCartCount();
 }
@@ -26,10 +26,8 @@ function updateCartDisplay() {
     }
 }
 function updateCartCount() {
-    const CART_COUNT = document.querySelector(".total-items");
-    if (CART_COUNT) {
-        CART_COUNT.textContent = cart.length;
-    }
+    const CART_COUNTS = document.querySelectorAll(".total-items");
+    if (CART_COUNTS) CART_COUNTS.forEach((count) => count.textContent = cart.length);
 }
 function clearCart() {
     cart = [];
@@ -52,9 +50,7 @@ ADD_TO_CART_BTN.forEach((btn) => {
 document.addEventListener("DOMContentLoaded", () => {
     cart = JSON.parse(localStorage.getItem("cart")) || [];
     total = 0;
-    cart.forEach((item) => {
-        total += item.price;
-    });
+    cart.forEach((item) => total += item.price);
     updateCartCount();
 
     const CART_MODAL = document.querySelector("#cart-modal");
@@ -62,10 +58,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const CLOSE_BTN = document.querySelector(".close-btn");
     const CHECKOUT_BTN = document.querySelector("#checkout");
     const CLEAR_CART_BTN = document.querySelector("#clear-cart");
+    const MOBILE_CART_ICON = document.querySelector(".mobile-shopping-cart");
 
+    if (MOBILE_CART_ICON && CART_MODAL) {
+        MOBILE_CART_ICON.addEventListener("click", () => {
+            CART_MODAL.style.display = "block";
+            updateCartDisplay();
+        });
+    }
     if (SHOPPING_CART_ICON && CART_MODAL && CLOSE_BTN) {
         SHOPPING_CART_ICON.addEventListener("click", () => {
-            console.log("Shopping cart icon clicked!"); // For debugging purposes
             CART_MODAL.style.display = "block";
             updateCartDisplay();
         });
@@ -75,9 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         window.addEventListener("click", (event) => {
-            if (event.target === CART_MODAL) {
-                CART_MODAL.style.display = "none";
-            }
+            if (event.target === CART_MODAL) CART_MODAL.style.display = "none";
         });
     }
 
@@ -86,11 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
             alert(`Total: $${total.toFixed(2)}. (Checkout functionality not implemented)`);
         });
     }
-    if (CLEAR_CART_BTN) {
-        CLEAR_CART_BTN.addEventListener("click", clearCart);
-    }
+    if (CLEAR_CART_BTN) CLEAR_CART_BTN.addEventListener("click", clearCart);
     updateCartDisplay();
 });
 
-console.log("Cart script loaded on this page successfully!");
 updateCartCount();
