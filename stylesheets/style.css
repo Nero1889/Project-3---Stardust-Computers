@@ -96,6 +96,15 @@ img, picture, video, canvas, svg {
     border: 1px solid red;
     color: var(--txt);
 }
+.total:hover {
+    background-color: #710033;
+}
+#view-cart {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding: 20px;
+    font-size: var(--size-2xl);
+}
 .total {
     position: absolute;
     background-color: #b71234;
@@ -104,20 +113,9 @@ img, picture, video, canvas, svg {
     padding: 1px;
     width: 2rem;
     margin-top: -3rem;
-    margin-left: 1rem;
+    margin-left: 8rem;
     color: white;
 }
-.total:hover {
-    background-color: #710033;
-}
-#view-cart {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    border: 1px solid green;
-    padding: 20px;
-    font-size: var(--size-2xl);
-}
-
 
 
 
@@ -359,6 +357,9 @@ hr {
     }
     hr {
         width: 500px;
+    }
+    .total {
+        margin-left: 1rem;
     }
 }
 
