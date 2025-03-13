@@ -89,12 +89,8 @@ img, picture, video, canvas, svg {
     margin-top: 1rem;
     font-size: var(--size-xs);
 }
-.shopping-cart {
+.shopping-cart, .mobile-shopping-cart {
     width: 2rem;
-}
-#cart {
-    border: 1px solid red;
-    color: var(--txt);
 }
 .total:hover {
     background-color: #710033;
@@ -104,6 +100,17 @@ img, picture, video, canvas, svg {
     margin-bottom: 4rem;
     padding: 20px;
     font-size: var(--size-2xl);
+}
+.cart-title {
+    font-family: Atkinson Hyperlegible Mono, Arial;
+    margin-bottom: 1rem;
+}
+#cart-items {
+    margin-bottom: .5rem;
+    list-style: none;
+}
+.modal-content p {
+    margin-bottom: 1rem;
 }
 .total {
     position: absolute;
@@ -116,66 +123,32 @@ img, picture, video, canvas, svg {
     margin-left: 8rem;
     color: white;
 }
-
-
-
 .modal {
     display: none; 
     position: fixed; 
-    z-index: 1; 
+    z-index: 9999; 
     left: 0;
     top: 0;
     width: 100%; 
     height: 100%; 
     overflow: auto; 
-    background-color: #00000066; 
+    background-color: #000000b4; 
 }
-
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; 
+    padding: 30px;
     max-width: 600px;
     position: relative;
 }
-
-.close-button {
-    color: #aaa;
+.close-btn {
     float: right;
-    font-size: 28px;
-    font-weight: bold;
+    width: var(--size-3xl);
     cursor: pointer;
 }
-
-.close-button:hover,
-.close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 .hidden {
     display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 hr {
     border-color: grey;
     margin: 0 auto;
