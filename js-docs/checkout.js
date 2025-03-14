@@ -7,34 +7,39 @@ function addToCart(itemId, price) {
     updateCartDisplay();
     updateCartCount();
 }
+
 function updateCartDisplay() {
     localStorage.setItem("cart", JSON.stringify(cart));
-    const CART_ITEMS = document.querySelector("#cart-items");
-    const CART_TOTAL = document.querySelector("#cart-total");
+    const cartItemsElement = document.querySelector("#cart-items");
+    const cartTotalElement = document.querySelector("#cart-total");
 
-    if (CART_ITEMS && CART_TOTAL) {
-        CART_ITEMS.innerHTML = "";
-        total = 0;
-
-        cart.forEach((item) => {
-            const LI_ITEM = document.createElement("li");
-            LI_ITEM.textContent = `Item ID: ${item.itemId} - $${item.price.toFixed(2)}`;
-            CART_ITEMS.appendChild(LI_ITEM);
-            total += item.price;
-        });
-        CART_TOTAL.textContent = total.toFixed(2);
+    if (cartItemsElement && cartTotalElement) {
+        cartItemsElement.innerHTML = cart
+        .map((item) => `<li>Item ID: ${item.itemId} - $${item.price.toFixed(2)}</li>`)
+        .join("");
+        total = cart.reduce((sum, item) => sum + item.price, 0);
+        cartTotalElement.textContent = total.toFixed(2);
     }
 }
+
 function updateCartCount() {
-    const CART_COUNTS = document.querySelectorAll(".total-items");
-    if (CART_COUNTS) CART_COUNTS.forEach((count) => count.textContent = cart.length);
+    document.querySelectorAll(".total-items")?.forEach((count) => (count.textContent = cart.length));
 }
+
 function clearCart() {
     cart = [];
     localStorage.removeItem("cart");
     total = 0;
     updateCartDisplay();
     updateCartCount();
+}
+
+function openModal(modal) {
+    modal.style.display = "block";
+}
+
+function closeModal(modal) {
+    modal.style.display = "none";
 }
 
 const ADD_TO_CART_BTN = document.querySelectorAll("[item-id][item-price] .buy");
@@ -51,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cart = JSON.parse(localStorage.getItem("cart")) || [];
     total = cart.reduce((sum, item) => sum + item.price, 0);
     updateCartCount();
-    updateCartDisplay(); 
+    updateCartDisplay();
 
     const CHECKOUT_MODAL = document.querySelector("#checkout-modal");
     const CHECKOUT_BTN = document.querySelector("#checkout");
@@ -61,23 +66,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (CHECKOUT_BTN) {
         CHECKOUT_BTN.addEventListener("click", () => {
-            CHECKOUT_TOTAL.textContent = total.toFixed(2);
-            CHECKOUT_MODAL.style.display = "block";
+            const SALES_TAX_RATE = 0.05;
+            const SALES_TAX = total * SALES_TAX_RATE;
+            const TOTAL_WITH_TAX = total + SALES_TAX; 
+            CHECKOUT_TOTAL.textContent = TOTAL_WITH_TAX.toFixed(2);
+            openModal(CHECKOUT_MODAL);
         });
     }
-    if (CHECKOUT_CLOSE) {
-        CHECKOUT_CLOSE.addEventListener("click", () => CHECKOUT_MODAL.style.display = "none");
-    }
 
+    if (CHECKOUT_CLOSE) CHECKOUT_CLOSE.addEventListener("click", () => closeModal(CHECKOUT_MODAL));
+    
     window.addEventListener("click", (event) => {
-        if (event.target === CHECKOUT_MODAL) CHECKOUT_MODAL.style.display = "none";
+        if (event.target === CHECKOUT_MODAL) closeModal(CHECKOUT_MODAL);
     });
+
     if (CHECKOUT_FORM) {
         CHECKOUT_FORM.addEventListener("submit", (event) => {
             event.preventDefault();
-            alert("Thank you for your purchase!");
-            clearCart();
-            CHECKOUT_MODAL.style.display = "none";
+
+            const SALES_TAX_RATE = 0.05;
+            const SALES_TAX = total * SALES_TAX_RATE;
+            const TOTAL_WITH_TAX = total + SALES_TAX;
+            const TOTAL_DUE_INPUT = document.querySelector("#total-due-input");
+            const ENTERED_TOTAL = parseFloat(TOTAL_DUE_INPUT.value);
+
+            if (ENTERED_TOTAL === parseFloat(TOTAL_WITH_TAX.toFixed(2))) {
+                alert("Thank you for your purchase!");
+                clearCart();
+                closeModal(CHECKOUT_MODAL);
+            } else alert("Insufficient funds! Please try again");
         });
     }
 
@@ -89,22 +106,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (MOBILE_CART_ICON && CART_MODAL) {
         MOBILE_CART_ICON.addEventListener("click", () => {
-            CART_MODAL.style.display = "block";
+            openModal(CART_MODAL);
             updateCartDisplay();
         });
     }
+
     if (SHOPPING_CART_ICON && CART_MODAL && CLOSE_BTN) {
         SHOPPING_CART_ICON.addEventListener("click", () => {
-            CART_MODAL.style.display = "block";
+            openModal(CART_MODAL);
             updateCartDisplay();
         });
-        CLOSE_BTN.addEventListener("click", () => CART_MODAL.style.display = "none");
+        CLOSE_BTN.addEventListener("click", () => closeModal(CART_MODAL));
 
         window.addEventListener("click", (event) => {
-            if (event.target === CART_MODAL) CART_MODAL.style.display = "none";
+            if (event.target === CART_MODAL) closeModal(CART_MODAL);
         });
     }
     if (CLEAR_CART_BTN) CLEAR_CART_BTN.addEventListener("click", clearCart);
 });
-    
+
 updateCartCount();
