@@ -10,15 +10,15 @@ function addToCart(itemId, price) {
 
 function updateCartDisplay() {
     localStorage.setItem("cart", JSON.stringify(cart));
-    const cartItemsElement = document.querySelector("#cart-items");
-    const cartTotalElement = document.querySelector("#cart-total");
+    const CART_ITEMS = document.querySelector("#cart-items");
+    const CART_TOTAL = document.querySelector("#cart-total");
 
-    if (cartItemsElement && cartTotalElement) {
-        cartItemsElement.innerHTML = cart
+    if (CART_ITEMS && CART_TOTAL) {
+        CART_ITEMS.innerHTML = cart
         .map((item) => `<li>Item ID: ${item.itemId} - $${item.price.toFixed(2)}</li>`)
         .join("");
         total = cart.reduce((sum, item) => sum + item.price, 0);
-        cartTotalElement.textContent = total.toFixed(2);
+        CART_TOTAL.textContent = total.toFixed(2);
     }
 }
 
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const TOTAL_DUE_INPUT = document.querySelector("#total-due-input");
             const ENTERED_TOTAL = parseFloat(TOTAL_DUE_INPUT.value);
 
-            if (ENTERED_TOTAL === parseFloat(TOTAL_WITH_TAX.toFixed(2))) {
+            if (ENTERED_TOTAL >= parseFloat(TOTAL_WITH_TAX.toFixed(2))) {
                 alert("Thank you for your purchase!");
                 clearCart();
                 closeModal(CHECKOUT_MODAL);
