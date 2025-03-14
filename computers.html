@@ -85,6 +85,27 @@
                 <button id="clear-cart" class="buy">Clear Cart</button>
             </div>
         </div>
+        <div id="checkout-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn checkout-close">
+                    <img class="close" src="images/close.png" alt="Close Button">
+                </span>
+                <h2>Select Payment Method</h2>
+                <form id="checkout-form">
+                    <label for="payment-method">Payment Method:</label>
+                    <select id="payment-method">
+                        <option value="credit-card">Debit Card</option>
+                        <option value="paypal">Credit Card</option>
+                        <option value="crypto">Cash</option>
+                    </select>
+                    <p>+ Sales Tax</p>
+                    <p>Total: $<span id="checkout-total">0.00</span></p>
+                    <label for="total-due-input">Enter Total Due:</label>
+                    <input type="number" id="total-due-input" step="0.01" required>
+                    <button type="submit" class="buy">Confirm Purchase</button>
+                </form>
+            </div>
+        </div>
         <section class="items container section">
             <h1 id="items-title" class="txt-rgb">Computers</h1>
             <div class="search-engine-container">
