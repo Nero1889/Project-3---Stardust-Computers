@@ -1,6 +1,6 @@
 .footer {
     background-color: var(--card);
-    height: 20rem;
+    height: 15rem;
 }
 #footer-container {
     display: flex;
@@ -27,7 +27,7 @@
 #footer-creator {
     color: grey;
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 2.5rem;
     font-family: Atkinson Hyperlegible Mono, Arial;
     font-weight: normal;
 }
