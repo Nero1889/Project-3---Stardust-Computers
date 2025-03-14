@@ -49,14 +49,41 @@ ADD_TO_CART_BTN.forEach((btn) => {
 
 document.addEventListener("DOMContentLoaded", () => {
     cart = JSON.parse(localStorage.getItem("cart")) || [];
-    total = 0;
-    cart.forEach((item) => total += item.price);
+    total = cart.reduce((sum, item) => sum + item.price, 0);
     updateCartCount();
+    updateCartDisplay(); 
+
+    const CHECKOUT_MODAL = document.querySelector("#checkout-modal");
+    const CHECKOUT_BTN = document.querySelector("#checkout");
+    const CHECKOUT_TOTAL = document.querySelector("#checkout-total");
+    const CHECKOUT_CLOSE = document.querySelector(".checkout-close");
+    const CHECKOUT_FORM = document.querySelector("#checkout-form");
+
+    if (CHECKOUT_BTN) {
+        CHECKOUT_BTN.addEventListener("click", () => {
+            CHECKOUT_TOTAL.textContent = total.toFixed(2);
+            CHECKOUT_MODAL.style.display = "block";
+        });
+    }
+    if (CHECKOUT_CLOSE) {
+        CHECKOUT_CLOSE.addEventListener("click", () => CHECKOUT_MODAL.style.display = "none");
+    }
+
+    window.addEventListener("click", (event) => {
+        if (event.target === CHECKOUT_MODAL) CHECKOUT_MODAL.style.display = "none";
+    });
+    if (CHECKOUT_FORM) {
+        CHECKOUT_FORM.addEventListener("submit", (event) => {
+            event.preventDefault();
+            alert("Thank you for your purchase!");
+            clearCart();
+            CHECKOUT_MODAL.style.display = "none";
+        });
+    }
 
     const CART_MODAL = document.querySelector("#cart-modal");
     const SHOPPING_CART_ICON = document.querySelector(".shopping-cart");
     const CLOSE_BTN = document.querySelector(".close-btn");
-    const CHECKOUT_BTN = document.querySelector("#checkout");
     const CLEAR_CART_BTN = document.querySelector("#clear-cart");
     const MOBILE_CART_ICON = document.querySelector(".mobile-shopping-cart");
 
@@ -71,23 +98,13 @@ document.addEventListener("DOMContentLoaded", () => {
             CART_MODAL.style.display = "block";
             updateCartDisplay();
         });
-
-        CLOSE_BTN.addEventListener("click", () => {
-            CART_MODAL.style.display = "none";
-        });
+        CLOSE_BTN.addEventListener("click", () => CART_MODAL.style.display = "none");
 
         window.addEventListener("click", (event) => {
             if (event.target === CART_MODAL) CART_MODAL.style.display = "none";
         });
     }
-
-    if (CHECKOUT_BTN) {
-        CHECKOUT_BTN.addEventListener("click", () => {
-            alert(`Total: $${total.toFixed(2)}. (Checkout functionality not implemented)`);
-        });
-    }
     if (CLEAR_CART_BTN) CLEAR_CART_BTN.addEventListener("click", clearCart);
-    updateCartDisplay();
 });
-
+    
 updateCartCount();
