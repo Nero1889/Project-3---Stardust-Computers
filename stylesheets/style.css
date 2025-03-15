@@ -140,6 +140,7 @@ img, picture, video, canvas, svg {
     padding: 30px;
     max-width: 600px;
     position: relative;
+    border-radius: 7px;
 }
 .close-btn {
     float: right;
