@@ -90,7 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const TOTAL_DUE_INPUT = document.querySelector("#total-due-input");
             const ENTERED_TOTAL = parseFloat(TOTAL_DUE_INPUT.value);
 
-            if (ENTERED_TOTAL >= parseFloat(TOTAL_WITH_TAX.toFixed(2))) {
+            if (ENTERED_TOTAL === 0) {
+                alert("Please place some items in your cart!");
+                closeModal(CHECKOUT_MODAL);
+            }
+
+            if (ENTERED_TOTAL >= parseFloat(TOTAL_WITH_TAX.toFixed(2)) && ENTERED_TOTAL !== 0) {
                 alert("Thank you for your purchase!");
                 clearCart();
                 closeModal(CHECKOUT_MODAL);
