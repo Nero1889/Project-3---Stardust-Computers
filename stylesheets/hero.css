@@ -41,12 +41,14 @@
     -webkit-text-fill-color: transparent;
     text-align: center;
     font-family: Atkinson Hyperlegible Mono, Arial;
+    animation: opacity .5s;
 }
 #hero-desc {
     color: white;
     font-family: Atkinson Hyperlegible Mono, Arial;
     font-weight: 100;
     text-shadow: 0 0 5px black;
+    animation: opacity 1.5s;
 }
 
 /* xxs = (extra extra small)  */
