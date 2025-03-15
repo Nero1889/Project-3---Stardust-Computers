@@ -80,6 +80,12 @@
     margin: 0 auto;
     position: relative;
 }
+.card-2 {
+    transition: transform .25s;
+}
+.card-2:hover {
+    transform: translateY(-20px);
+}
 @property --angle {
     syntax: "<angle>";
     initial-value: 0deg;
